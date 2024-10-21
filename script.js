@@ -86,12 +86,33 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+    for(let row = 0; row < numRows; row++)
+    {
+        let currentRow = rows[row];
+        for(let cell = 0; cell < numCols; cell++)
+        {
+            let currentCell = currentRow.children[cell];
+            if(currentCell.getAttribute("style") == null || currentCell.style.backgroundColor == "white")
+            {
+                currentCell.style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+    for(let row = 0; row < numRows; row++)
+    {
+        let currentRow = rows[row];
+        for(let cell = 0; cell < numCols; cell++)
+        {
+            let currentCell = currentRow.children[cell];
+            currentCell.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
