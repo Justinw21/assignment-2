@@ -12,10 +12,9 @@ function addR() {
         numCols += 1
     }
     let newRow = document.createElement("tr");
-    let newCol = document.createElement("td");
     for(let i = 0; i < numCols; i++)
     {   
-
+        let newCol = document.createElement("td");
         newCol.onclick = function() {newCol.style.backgroundColor = colorSelected};
         newRow.appendChild(newCol);
     }
@@ -24,7 +23,21 @@ function addR() {
 
 // Add a column
 function addC() {
-
+    numCols += 1;
+    if(numRows == 0)
+    {
+        addR();
+    }
+    else
+    {
+        let rows = document.getElementsByTagName("tr");
+        for(let i = 0; i < numRows; i++)
+        {
+            let newCol = document.createElement("td");
+            newCol.onclick = function() {newCol.style.backgroundColor = colorSelected};
+            rows[i].appendChild(newCol);
+        }
+    }
 }
 
 // Remove a row
