@@ -42,7 +42,17 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if(numRows != 0)
+    {
+        numRows -= 1
+        let grid = document.getElementById("grid");
+        let row = grid.querySelector("tr");
+        grid.removeChild(row);
+        if(numRows == 0)
+        {
+            numCols = 0;
+        }
+    }
 }
 
 // Remove a column
