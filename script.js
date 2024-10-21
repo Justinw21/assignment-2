@@ -5,12 +5,26 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    numRows += 1;
+    let grid = document.getElementById("grid");
+    if(numCols == 0)
+    {
+        numCols += 1
+    }
+    let newRow = document.createElement("tr");
+    let newCol = document.createElement("td");
+    for(let i = 0; i < numCols; i++)
+    {   
+
+        newCol.onclick = function() {newCol.style.backgroundColor = colorSelected};
+        newRow.appendChild(newCol);
+    }
+    grid.appendChild(newRow);
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+
 }
 
 // Remove a row
