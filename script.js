@@ -117,5 +117,14 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let rows = document.getElementsByTagName("tr");
+    for(let row = 0; row < numRows; row++)
+    {
+        let currentRow = rows[row];
+        for(let cell = 0; cell < numCols; cell++)
+        {
+            let currentCell = currentRow.children[cell];
+            currentCell.style.backgroundColor = "white";
+        }
+    }
 }
